@@ -1,6 +1,7 @@
 
 class Test_Web:
-
+    
+    # Тестирование кнопок запросов на главной странице
     def test_click_button(self, set_up_tear_down) -> None:
         page = set_up_tear_down
         page.get_by_role("listitem").filter(has_text="List users").click()
@@ -18,7 +19,8 @@ class Test_Web:
         page.get_by_role("listitem").filter(has_text="Login - successful").click()
         page.get_by_role("listitem").filter(has_text="Login - unsuccessful").click()
         page.get_by_role("listitem").filter(has_text="Delayed response").click()
-
+    
+    # Тестирование статус кода и body api и web для создания пользователя
     def test_API_WEB_assert(self, set_up_tear_down, api_web_assert) -> None:
         page = set_up_tear_down
 
